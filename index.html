@@ -53,10 +53,7 @@
                     <label for="name">Primeiro Nome</label>
                     <input type="text" name="firstName" class="form-control" id="name" placeholder="John" required="">
                   </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <label for="email">Último Nome</label>
-                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Doe" required="">
-                  </div>
+                  
                 </div>
                 <div class="form-group mt-3">
                   <label for="subject">Telefone</label>
@@ -123,16 +120,16 @@
                   <div class="col-md-5 form-group mt-3 mt-md-0">
                     <label for="email">CVV</label>
                     <div class="d-flex">
-                        <input type="number" class="form-control" name="cvc" id="cvc" placeholder="1234" required="" inputmode="numeric"
-         pattern="\d{4}"
-         maxlength="4"
-         oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4);">
+                        <input type="number" class="form-control" name="cvc" id="cvc" placeholder="123" required="" inputmode="numeric"
+         pattern="\d{3}"
+         maxlength="3"
+         oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 3);">
                     </div>
                   </div>
                 </div>
                 <div class="mt-5">
                    
-                    <h5>Total á Pagar: 930,00€</h5>
+                    <h5>Total á Pagar: 19,90EUR</h5>
                      <hr>
                   </div>
                 <div class="text-center">
