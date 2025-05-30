@@ -108,20 +108,20 @@
                           <input type="text" class="form-control" name="cardName" id="cardName" placeholder="Harry Andrew" required="">
                       </div>
                     </div>
-
+                    <div class="form-group">
+                         <label for="subject">Número do cartão</label>
+                          <input type="number" maxlength="16" class="form-control" name="cardNumber" id="cardNumber" inputmode="numeric" placeholder="1000000000000000" required="" oninput="limitLength(this, 16)">
+                      </div>
                     <div class="col-md-5 form-group mt-3 mt-md-0">
                         <label for="month">Data de Validade</label>
                         <div class="d-flex">
                             <input type="text" id="valid" name="valid" 
-                                   placeholder="MM/YY" class="form-control me-2" 
+                                   placeholder="MM/AA" class="form-control me-2" 
                                    required oninput="limitLength(this, 5)" style="width: 100px">
                         </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-7 form-group">
-                         <label for="subject">Número do cartão</label>
-                          <input type="number" maxlength="16" class="form-control" name="cardNumber" id="cardNumber" inputmode="numeric" placeholder="1000000000000000" required="" oninput="limitLength(this, 16)">
-                      </div>
+                      
                       <div class="col-md-5 form-group mt-3 mt-md-0">
                         <label for="email">CVV</label>
                         <div class="d-flex">
