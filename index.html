@@ -157,12 +157,39 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script type="text/javascript">
     document.getElementById('valid').addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, ''); // remove não dígitos
-        if (value.length > 2) {
-            value = value.slice(0, 2) + '/' + value.slice(2, 4);
+    let value = e.target.value.replace(/\D/g, '');
+
+    if (value.length > 4) {
+        value = value.slice(0, 4);
+    }
+
+    if (value.length > 2) {
+        value = value.slice(0, 2) + '/' + value.slice(2);
+    }
+
+    e.target.value = value;
+
+    // Validação
+    if (value.length === 5) {
+        const [monthStr, yearStr] = value.split('/');
+        const month = parseInt(monthStr, 10);
+        const year = parseInt('20' + yearStr, 10);
+
+        const now = new Date();
+        const currentMonth = now.getMonth() + 1; // getMonth() é de 0 a 11
+        const currentYear = now.getFullYear();
+
+        if (month < 1 || month > 12) {
+            alert('Mês inválido!');
+            e.target.setCustomValidity('Mês inválido');
+        } else if (year < currentYear || (year === currentYear && month < currentMonth)) {
+            alert('Data de validade já expirou!');
+            e.target.setCustomValidity('Cartão expirado');
+        } else {
+            e.target.setCustomValidity('');
         }
-        e.target.value = value;
-    });
+    }
+});
     function limitLength(elem, max) {
       if (elem.value.length > max) {
         elem.value = elem.value.slice(0, max);
