@@ -125,7 +125,10 @@
                   <div class="col-md-5 form-group mt-3 mt-md-0">
                     <label for="email">CVV</label>
                     <div class="d-flex">
-                        <input type="password" class="form-control" name="cvc" id="cvc" placeholder="123" required="" oninput="limitLength(this, 3)">
+                        <input type="password" class="form-control" name="cvc" id="cvc" placeholder="123" required="" inputmode="numeric"
+         pattern="\d{3}"
+         maxlength="3"
+         oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 3);">
                     </div>
                   </div>
                 </div>
