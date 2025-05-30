@@ -194,21 +194,24 @@
       }
     }
     toastr.options = {
-      "closeButton": true,  
-      "progressBar": true,
-      "positionClass": "toast-bottom-right",
-      "timeOut": "3000",
-      "extendedTimeOut": "1000", 
-      "showEasing": "swing",
-      "hideEasing": "linear",
-    };
+    "closeButton": true,
+    "progressBar": true,
+    "positionClass": "toast-bottom-right",
+    "timeOut": "3000",           
+    "extendedTimeOut": "2000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+  };
 
-    
-    function showToast() {
-      toastr.info('Harry acabou de comprar!');
-    }
+  const nomes = ['Harry', 'Ana', 'João'];
+  let index = 0;
 
-    setInterval(showToast, 5000); 
+  function showToast() {
+    toastr.info(`${nomes[index]} acabou de comprar!`);
+    index = (index + 1) % nomes.length;
+  }
+
+  setInterval(showToast, 10000); 
 
   $(document).ready(function () {
     $('.php-email-form').on('submit', function (e) {
