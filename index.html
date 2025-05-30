@@ -49,8 +49,8 @@
               <form method="post" class="php-email-form">
                 
                 
-                  <div class="col-md-6 form-group">
-                    <label for="name">Primeiro Nome</label>
+                  <div class="form-group">
+                    <label for="name">Nome Completo</label>
                     <input type="text" name="firstName" class="form-control" id="name" placeholder="John" required="">
                   </div>
                   
@@ -85,7 +85,10 @@
                 </div>
                 <div class="form-group mt-3">
                   <label for="subject">País</label>
-                  <input type="text" class="form-control" name="country" id="country" placeholder="Brazil" required>
+                <select class="form-control" name="country" id="country">
+                    <option value="Angola">Angola</option>
+                    <option value="Brazil">Brazil</option>
+                </select>
                 </div>
                 <div class="mt-5">
                     <div style="display: flex; align-items: center;">
@@ -109,7 +112,7 @@
                     <div class="d-flex">
                         <input type="text" id="valid" name="valid" 
                                placeholder="MM/YY" class="form-control me-2" 
-                               required oninput="limitLength(this, 5)">
+                               required oninput="limitLength(this, 5)" style="width: 50px">
                     </div>
                 </div>
                 <div class="row">
