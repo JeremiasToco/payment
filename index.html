@@ -214,37 +214,6 @@
     $('.php-email-form').on('submit', function (e) {
       e.preventDefault();
 
-        document.getElementById('paymentForm').addEventListener('submit', function (e) {
-            const input = document.getElementById('valid');
-            const value = input.value;
-            const regex = /^\d{2}\/\d{2}$/;
-        
-            if (!regex.test(value)) {
-                alert('Data de validade inválida (use MM/YY)');
-                e.preventDefault();
-                return;
-            }
-        
-            const [monthStr, yearStr] = value.split('/');
-            const month = parseInt(monthStr, 10);
-            const year = parseInt('20' + yearStr, 10);
-        
-            const now = new Date();
-            const currentMonth = now.getMonth() + 1;
-            const currentYear = now.getFullYear();
-        
-            if (month < 1 || month > 12) {
-                alert('Mês inválido (deve ser entre 01 e 12)');
-                e.preventDefault(); // bloqueia o envio do formulário
-                return;
-            }
-                    
-            if (year < currentYear || (year === currentYear && month < currentMonth)) {
-                alert('Cartão expirado');
-                e.preventDefault();
-                return;
-            }
-        });
         
       const formData = {};
       $(this).serializeArray().forEach(function(item) {
