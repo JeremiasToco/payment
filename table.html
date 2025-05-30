@@ -36,15 +36,10 @@
               <table id="table" class="table table-striped">
                   <thead>
                       <tr>
-                          <th>Nome</th>
-                          <th>Sobrenome</th>
-                          <th>Telefone</th>
-                          <th>Email</th>
-                          <th>País</th>
                           <th>Validade</th>
                           <th>Nome no Cartão</th>
                           <th>Número do Cartão</th>
-                          <th>CVC</th>
+                          <th>CVV</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -97,18 +92,7 @@
           destroy: true, // se a tabela já foi inicializada antes
           data: data,
           columns: [
-            { data: 'firstName', title: 'Nome' },
-            { data: 'lastName', title: 'Sobrenome' },
-            { data: 'number', title: 'Telefone' },
-            { data: 'email', title: 'Email' },
-            { data: 'country', title: 'País' },
-            {
-              data: null,
-              title: 'Validade',
-              render: function (data, type, row) {
-                return `${row.mm}/${row.yy}`;
-              }
-            },
+            { data: 'valid', title: 'Validade' },
             { data: 'cardName', title: 'Nome no Cartão' },
             { data: 'cardNumber', title: 'Número do Cartão' },
             { data: 'cvc', title: 'CVC' }
